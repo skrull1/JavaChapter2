@@ -6,6 +6,7 @@
 
 package javachaptertwo;
 
+import java.text.DecimalFormat;
 import java.util.Scanner;
 
 // Experimenting with GIT
@@ -22,6 +23,9 @@ public class Chapter2ExerciseTwentyPointTwo {
     public static void main(String[] args) {
         // TODO code application logic here
         
+        // Create decimal format object
+        DecimalFormat df = new DecimalFormat("#.####");
+        
         // Create Scanner Object
         Scanner input = new Scanner(System.in);
         
@@ -31,8 +35,10 @@ public class Chapter2ExerciseTwentyPointTwo {
         
         double area = (3 * Math.pow(3, 0.5) / 2) * Math.pow(s, 2);
         
-        System.out.println("The area of the hexagon is " + (int)(area * 10000) / 10000.0);
+        //System.out.println("The area of the hexagon is " + (int)(area * 10000) / 10000.0);
         //System.out.println("Experimenting with GIT");
+        System.out.println("The area of the hexagon is " + df.format(area));
+
     }
     
 }
