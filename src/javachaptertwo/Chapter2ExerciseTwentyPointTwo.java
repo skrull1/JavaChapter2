@@ -9,6 +9,7 @@ package javachaptertwo;
 import java.util.Scanner;
 
 // Experimenting with GIT
+// More Experimenting with GIT
 
 /**
  *
@@ -32,7 +33,7 @@ public class Chapter2ExerciseTwentyPointTwo {
         double area = (3 * Math.pow(3, 0.5) / 2) * Math.pow(s, 2);
         
         System.out.println("The area of the hexagon is " + (int)(area * 10000) / 10000.0);
-        //System.out.println("Experimenting with GIT");
+        System.out.println("Experimenting with GIT");
     }
     
 }
