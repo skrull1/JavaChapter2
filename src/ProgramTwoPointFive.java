@@ -19,7 +19,8 @@ public class ProgramTwoPointFive {
 		double subtotal = input.nextDouble();
 		double gratuity = input.nextDouble() / 100;	
 		
-		System.out.println("The gratuity is " + (int)(subtotal * gratuity  * 100) / 100.0 + " and the total is " + (int)(subtotal * (1 + gratuity) * 100) / 100.0);
+		//System.out.println("The gratuity is " + (int)(subtotal * gratuity  * 100) / 100.0 + " and the total is " + (int)(subtotal * (1 + gratuity) * 100) / 100.0);
+                System.out.println("The gratuity is " + df.format(subtotal * gratuity) + " and the total is " + df.format(subtotal * (1 + gratuity)));
 		input.close();
 	}
 
