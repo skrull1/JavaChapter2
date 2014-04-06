@@ -4,8 +4,9 @@
  * and open the template in the editor.
  */
 
-package test;
 
+
+import java.text.DecimalFormat;
 import javax.swing.JOptionPane;
 
 /**
@@ -19,13 +20,18 @@ public class Chapter2ExerciseTwoPointTwelveA {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        
+        // Create Decimal Format Object
+        DecimalFormat df = new DecimalFormat("#.#####");
         String sBalance = JOptionPane.showInputDialog("Enter balance");
         double balance = Double.parseDouble(sBalance);
         String sInterestRate = JOptionPane.showInputDialog("Enter interest rate e.g., 3 for 3%");
         double interestRate = Double.parseDouble(sInterestRate);
-        double tInterest = (int)(balance * interestRate / 1200.0 * 100000) / 100000.0 ;
+        // double tInterest = (int)(balance * interestRate / 1200.0 * 100000) / 100000.0 ;
+        double tInterest = balance * interestRate / 1200;
         
-        String output = "The interest is " + tInterest;
+        
+        String output = "The interest is " + df.format(tInterest);
         JOptionPane.showMessageDialog(null, output);
     }
     
