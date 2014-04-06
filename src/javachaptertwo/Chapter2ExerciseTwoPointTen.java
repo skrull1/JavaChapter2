@@ -4,9 +4,7 @@
  * and open the template in the editor.
  */
 
-package test;
 
-import java.util.Scanner;
 import javax.swing.JOptionPane;
 
 /**
