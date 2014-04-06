@@ -4,8 +4,9 @@
  * and open the template in the editor.
  */
 
-package test;
 
+
+import java.text.DecimalFormat;
 import java.util.Scanner;
 
 /**
@@ -19,6 +20,9 @@ public class Chapter2ExerciseTwoPointEleven {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        
+        // Create Decimal Format Object
+        DecimalFormat df = new DecimalFormat("#.##");
         
          // Create Scanner object
         
@@ -38,19 +42,22 @@ public class Chapter2ExerciseTwoPointEleven {
         double gPay = wHours * hPayRate;
         double fTaxCalc = gPay * fTax;
         double sTaxCalc = gPay * sTax;
-        double tTax = (int)(fTaxCalc * 100) / 100.0 + (int)(sTaxCalc * 100) / 100.0;
-        double nPay = ((int)(gPay * 100) / 100.0) - tTax;
+        //double tTax = (int)(fTaxCalc * 100) / 100.0 + (int)(sTaxCalc * 100) / 100.0;
+        //double nPay = ((int)(gPay * 100) / 100.0) - tTax;
+        
+        double tTax = fTaxCalc * 100 / 100.0 + sTaxCalc * 100 / 100.0;
+        double nPay = gPay * 100 / 100.0 - tTax;
         
         System.out.println("Employee Name: " + eName);
         System.out.println("Hours worked: " + wHours);
-        System.out.println("Pay Rate: $" + hPayRate);
-        System.out.println("Gross Pay: $" + gPay );
+        System.out.println("Pay Rate: $" + df.format(hPayRate));
+        System.out.println("Gross Pay: $" + df.format(gPay ));
         
         System.out.print("Deductions:");
-        System.out.print("\n Federal Withholding (" + fTax * 100 + "%):  " + "$" + (int)(fTaxCalc * 100) / 100.0);
-        System.out.print("\n State Withholding (" + sTax * 100 + "%): " + "$" + (int)(sTaxCalc * 100) / 100.0);
-        System.out.print("\n Total Deduction: $" + tTax  + "\n");
-        System.out.print("Net Pay: $" + nPay);
+        System.out.print("\n Federal Withholding (" + fTax * 100 + "%):  " + "$" + df.format(fTaxCalc));
+        System.out.print("\n State Withholding (" + sTax * 100 + "%): " + "$" + df.format(sTaxCalc));
+        System.out.print("\n Total Deduction: $" + df.format(tTax)  + "\n");
+        System.out.print("Net Pay: $" + df.format(nPay));
     }
     
 }
